@@ -24,7 +24,7 @@ npm run serve
 resources:
 
 - [gitbook-cli](https://github.com/GitbookIO/gitbook-cli)
-- this project originally forked from [here](https://github.com/JozoVilcek/gitbook-example) and modified to be worked
+- this project was originally forked from [here](https://github.com/JozoVilcek/gitbook-example) and then modified to be work
 
 **original README.md**
 
