@@ -1,8 +1,36 @@
 {
   "dependencies": {
-    "gitbook-cli": "0.3.4",
+    "ebook-convert": "2.0.1",
+    "gitbook-cli": "2.3.2",
     "gitbook-plugin-include": "0.1.0",
-    "gitbook-plugin-katex": "1.0.2",
-    "gitbook-plugin-mermaid": "git://github.com/JozoVilcek/gitbook-plugin-mermaid.git"
-  }
+    "gitbook-plugin-katex": "1.1.4",
+    "local-web-server": "0.5.23",
+    "node": "5.12.0"
+  },
+  "scripts": {
+    "postinstall": "#gitbook update",
+    "docs": "gitbook build ./src/book ./docs --verbose",
+    "preserve": "npm run docs",
+    "serve": "ws -p 3000 -c -d ./docs"
+  },
+  "name": "gradle-gitbook-example",
+  "description": "Have you ever wanted to have a tool, for writing documentation, which would allow you to: * express yourself in easy way such as [markdown](http://en.wikipedia.org/wiki/Markdown) * insert code examples not just in from of inlined code blocks, but also from files (which you can validate first, e.g. they do compile) * insert and render simple diagrams and flow charts * insert mathematical expressions * easily supply plugins to extend behaviors and add features * support multiple output formats where one of them is good loking and simple static website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daggerok/gradle-gitbook-example.git"
+  },
+  "private": true,
+  "keywords": [],
+  "author": "daggerok",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daggerok/gradle-gitbook-example/issues"
+  },
+  "homepage": "https://github.com/daggerok/gradle-gitbook-example#readme"
 }

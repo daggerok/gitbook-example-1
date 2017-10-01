@@ -1,3 +1,26 @@
+# gradle-gitbook-example [![Build Status](https://travis-ci.org/daggerok/gradle-gitbook-example.svg?branch=master)](https://travis-ci.org/daggerok/gradle-gitbook-example)
+
+```bash
+# build docs using gitbook-cli
+bash gradlew build
+
+# watch results
+./gradlew npm_run_serve
+
+# cleanup
+./gradlew clean
+```
+
+```bash
+npm i -g n
+n 5.12.0
+npm i
+npm run docs
+npm run serve
+```
+
+**original README.md**
+
 # GitBook Usage Example
 
 Have you ever wanted to have a tool, for writing documentation, which would allow you to:

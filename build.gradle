@@ -1,55 +1,29 @@
-
 plugins {
-    id "com.moowork.node" version "0.8"
+  id "java"
+  id "com.moowork.node" version "1.2.0"
 }
 
-apply plugin: 'com.moowork.node'
-apply plugin: 'java'
-
 sourceSets {
-    examples
+  examples
 }
 
 node {
-    // Version of node to use.
-    version = '0.12.7'
-
-    // Version of npm to use.
-    npmVersion = '2.11.3'
-
-    // Base URL for fetching node distributions (change if you have a mirror).
-    distBaseUrl = 'http://nodejs.org/dist'
-
-    // If true, it will download node using above parameters.
-    // If false, it will try to use globally installed node.
-    download = false
-    workDir = file("${project.buildDir}/nodejs")
+  version = "5.12.0"
+  npmVersion = "5.3.0"
+  yarnVersion = "v0.24.5"
+  distBaseUrl = "http://nodejs.org/dist"
+  download = false
+  workDir = file("$project.buildDir/nodejs")
 }
 
-
-task buildDocsPdf(type: Exec, dependsOn: 'npmInstall') {
-
-    inputs.dir('${project.projectDir}/src/examples')
-
-    executable = 'node_modules/.bin/gitbook'
-    args = ['pdf', './src/book', "${project.buildDir}/docs/book.pdf", "--verbose"]
+clean {
+  delete "$buildDir"
+  delete "$projectDir/node_modules"
+  delete "$projectDir/docs"
+  delete "$projectDir/package-lock.json"
+  delete "$projectDir/yarn.lock"
 }
 
-task buildDocs(type: Exec, dependsOn: 'npmInstall') {
-
-    inputs.dir('${project.projectDir}/src/examples')
-
-    executable = 'node_modules/.bin/gitbook'
-    args = ['build', './src/book', "${project.buildDir}/docs", "--verbose"]
-}
-
-task serveDocs(type:Exec, dependsOn: 'npmInstall') {
-
-    inputs.dir('${project.projectDir}/src/examples')
-    
-    executable = 'node_modules/.bin/gitbook'
-    args = ['serve', './src/book', "${project.buildDir}/docs", '--verbose']
-}
-
-assemble.dependsOn buildDocs
+task buildDocs(dependsOn: [npm_run_docs])
 buildDocs.dependsOn examplesClasses
+assemble.dependsOn buildDocs
