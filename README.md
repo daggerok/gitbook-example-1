@@ -21,6 +21,11 @@ npm run docs
 npm run serve
 ```
 
+resources:
+
+- [gitbook-cli](https://github.com/GitbookIO/gitbook-cli)
+- this project originaly forked from [here](https://github.com/JozoVilcek/gitbook-example) and modified to be worked
+
 **original README.md**
 
 # GitBook Usage Example
