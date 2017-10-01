@@ -1,5 +1,7 @@
 # gradle-gitbook-example [![Build Status](https://travis-ci.org/daggerok/gradle-gitbook-example.svg?branch=master)](https://travis-ci.org/daggerok/gradle-gitbook-example)
 
+This repos is contains example how to build gitbook documentation using gitbook-cli and gradle
+
 ```bash
 # build docs using gitbook-cli
 bash gradlew build
